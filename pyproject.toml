@@ -1,0 +1,36 @@
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "goldfish"
+version = "0.1.0"
+description = "An LLM agentic framework"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "tungnx23", age = "29" },  # Add email if available
+]
+
+dependencies = [
+    "openai==1.33.0",
+    "loguru==0.7.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "mypy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["goldfish*"]  
+
+[tool.setuptools]
+package-dir = { "" = "src" } 
+
